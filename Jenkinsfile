@@ -13,12 +13,13 @@ pipeline {
                 echo "M2_HOME = /opt/maven"
             }
         }
+        /*
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
- 
+*/ 
         stage('Test') {
             steps {
                 sh 'ls -la target'
