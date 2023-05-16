@@ -20,5 +20,12 @@ pipeline {
             
             }
         }
+         stage('Docker Build') {
+            steps {
+                script {
+                    docker.build("localhost/mvn-app:latest")
+                }
+            }
+        }
      }
 }
