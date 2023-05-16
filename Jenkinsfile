@@ -13,19 +13,26 @@ pipeline {
                 echo "M2_HOME = /opt/maven"
             }
         }
-        stage('Build') {
+/*        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+ */
+        stage('Test') {
             steps {
                 
                 sh 'mvn surefire:test'
             
             }
         }
-         stage('Docker Build') {
+/*         stage('Docker Build') {
             steps {
                 script {
                     docker.build("localhost/mvn-app:latest")
                 }
             }
         }
+        */
      }
 }
