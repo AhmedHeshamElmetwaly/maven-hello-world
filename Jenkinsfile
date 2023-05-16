@@ -21,7 +21,8 @@ pipeline {
  */
         stage('Test') {
             steps {
-                
+                sh 'ls'
+                sh 'pwd'
                 sh 'mvn surefire:test'
             
             }
