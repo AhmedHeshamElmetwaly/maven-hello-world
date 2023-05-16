@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'ls -la target'
-                sh 'pwd'
+                sh 'rm -rf target'
                 sh 'mvn surefire:test'
                 sh 'ls -la target'
             
